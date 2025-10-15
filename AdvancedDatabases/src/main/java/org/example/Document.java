@@ -169,4 +169,10 @@ public class Document {
         this.sleepDisorder = sleepDisorder;
     }
 
+    public String toString(){
+
+        return getOccupation() + " " + getAge() + " " + getGender() + " " + getSleepDuration() + " " + getSleepDuration();
+
+    }
+
 }
