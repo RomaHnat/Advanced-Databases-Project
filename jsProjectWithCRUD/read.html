@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sleep Quality CRUD</title>
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@8.0.1/dist/pouchdb.min.js"></script>
+</head>
+<body>
+    <nav>
+        <h1>Sleep Quality - Read Document</h1>
+        <ul>
+            <li><a href="index.html">Index</a></li>
+            <li><a href="create.html">Create New Document</a></li>
+            <li><a href="read.html">Read a Document</a></li>
+            <li><a href="update.html">Update a Document</a></li>
+            <li><a href="delete.html">Delete a Document</a></li>
+        </ul>
+    </nav>
+     
+        <div class="searchSection">
+            <h3>Search by Document ID</h3>
+            <input type="text" id="searchId" placeholder="Enter document ID">
+            <button onclick="searchById()">Search</button>
+        </div>
+
+        <div class="searchSection">
+            <h3>View All Documents</h3>
+            <button onclick="viewAllRecords()">View All Documents</button>
+        </div>
+
+        <div id="searchResults">
+        </div>
+
+    <script src="app.js"></script>
+    <script>
+        window.addEventListener('load', function() {
+            viewAllRecords();
+        });
+    </script>
+</body>
+</html>
