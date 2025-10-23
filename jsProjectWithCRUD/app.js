@@ -220,20 +220,6 @@ function cancelUpdate() {
     document.getElementById('updateForm').reset();
 }
 
-function confirmDelete() {
-    if (!window.docToDelete) {
-        showMessage('No document loaded for deletion', 'error');
-        return;
-    }
-    
-    localDB.remove(window.docToDelete).then(function (response) {
-        showMessage('Document deleted successfully!', 'success');
-        cancelDelete();
-    }).catch(function (err) {
-        showMessage('Error deleting document: ' + err.message, 'error');
-    });
-}
-
 function deleteDocument() { 
     const deleteId = document.getElementById('deleteId').value.trim();
     if (!deleteId) {
@@ -253,12 +239,6 @@ function deleteDocument() {
             showMessage('Error deleting document: ' + err.message, 'error');
         }
     });
-}
-
-function cancelDelete() {
-    document.getElementById('deletePreviewSection').style.display = 'none';
-    document.getElementById('deleteSearchId').value = '';
-    window.docToDelete = null;
 }
 
 function showMessage(message, type) {
